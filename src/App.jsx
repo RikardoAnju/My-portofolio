@@ -24,7 +24,7 @@ const App = () => {
 
   // Fungsi untuk menangani klik tombol "Lihat Detail"
   const handleLihatDetail = (id) => {
-    const proyek = listProyek.find(p => p.id === id);
+    const proyek = listProyek.find((p) => p.id === id);
     setSelectedProyek(proyek);
     setShowDetail(true);
   };
@@ -48,7 +48,7 @@ const App = () => {
       <div className="min-h-screen bg-zinc-900 text-white">
         <div className="p-6">
           <div className="max-w-4xl mx-auto">
-            <button 
+            <button
               onClick={handleKembali}
               className="mb-6 bg-zinc-700 p-3 rounded-lg hover:bg-zinc-600 transition-colors duration-300"
               data-aos="fade-down"
@@ -57,24 +57,24 @@ const App = () => {
               <i className="ri-arrow-left-line mr-2"></i>
               Kembali
             </button>
-            
-            <div 
+
+            <div
               className="w-full mb-6"
               data-aos="zoom-in"
               data-aos-duration="1000"
               data-aos-delay="200"
             >
-              <img 
-                src={selectedProyek.gambar} 
-                alt={selectedProyek.nama} 
-                className="w-full h-auto max-h-96 object-contain rounded-lg cursor-default select-none" 
+              <img
+                src={selectedProyek.gambar}
+                alt={selectedProyek.nama}
+                className="w-full h-auto max-h-96 object-contain rounded-lg cursor-default select-none"
                 onClick={handleImageClick}
                 onContextMenu={handleImageClick}
                 draggable="false"
               />
             </div>
-            
-            <h1 
+
+            <h1
               className="text-4xl font-bold mb-4"
               data-aos="fade-up"
               data-aos-duration="800"
@@ -82,7 +82,7 @@ const App = () => {
             >
               {selectedProyek.judul}
             </h1>
-            <p 
+            <p
               className="text-lg mb-6 opacity-75"
               data-aos="fade-up"
               data-aos-duration="800"
@@ -90,22 +90,24 @@ const App = () => {
             >
               {selectedProyek.desk || "Deskripsi proyek tidak tersedia."}
             </p>
-            
-            <div 
+
+            <div
               className="mb-6"
               data-aos="fade-up"
               data-aos-duration="800"
               data-aos-delay="500"
             >
-              <h3 className="text-2xl font-semibold mb-4">Tools & Technologies:</h3>
+              <h3 className="text-2xl font-semibold mb-4">
+                Tools & Technologies:
+              </h3>
               <div className="flex flex-wrap gap-3">
                 {selectedProyek.tools.map((tool, index) => (
-                  <span 
-                    key={index} 
+                  <span
+                    key={index}
                     className="py-2 px-4 border border-zinc-500 bg-zinc-700 rounded-md font-semibold"
                     data-aos="fade-up"
                     data-aos-duration="600"
-                    data-aos-delay={600 + (index * 100)}
+                    data-aos-delay={600 + index * 100}
                   >
                     {tool}
                   </span>
@@ -196,16 +198,10 @@ const App = () => {
               data-aos-duration="1000"
               data-aos-delay="600"
             >
-              Saya adalah mahasiswa Politeknik Negeri Batam yang memiliki
-              ketertarikan besar di bidang pemrograman, terutama dalam
-              pengembangan website dan aplikasi mobile. Selain fokus pada aspek
-              teknis pemrograman, saya juga memiliki kemampuan dalam desain
-              UI/UX. Hal ini memungkinkan saya untuk tidak hanya membangun
-              aplikasi yang berfungsi dengan baik, tetapi juga memiliki tampilan
-              yang menarik dan pengalaman pengguna yang optimal. Saya percaya
-              bahwa kombinasi antara logika pemrograman dan estetika desain
-              merupakan kunci dalam menciptakan solusi digital yang berkualitas
-              dan bernilai guna tinggi.
+              "Saya memiliki ketertarikan dalam bidang pemrograman, khususnya
+              dalam pembuatan website dan aplikasi mobile. Ketertarikan ini
+              telah saya tekuni selama lebih dari 3 tahun di berbagai bidang
+              terkait."
             </p>
 
             <div
@@ -222,15 +218,6 @@ const App = () => {
                 data-aos-delay="1000"
               >
                 Download CV <i className="ri-download-line"></i>
-              </a>
-              <a
-                href="#proyek"
-                className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600 transition-colors duration-300"
-                data-aos="bounce"
-                data-aos-duration="800"
-                data-aos-delay="1100"
-              >
-                Lihat Proyek <i className="ri-arrow-down-line"></i>
               </a>
             </div>
           </div>
@@ -314,26 +301,21 @@ const App = () => {
                 data-aos-duration="1000"
                 data-aos-delay="700"
               >
-                <div 
-                  data-aos="slide-up" 
+                <div
+                  data-aos="slide-up"
                   data-aos-delay="800"
                   data-aos-duration="800"
                 >
                   <h1 className="text-4xl mb-1">
-                    45 <span className="text-violet-500">+</span>
+                    3 <span className="text-violet-500">+</span>
                   </h1>
                   <p>Proyek Selesai</p>
                 </div>
-                <div 
-                  data-aos="slide-up" 
+                <div
+                  data-aos="slide-up"
                   data-aos-delay="900"
                   data-aos-duration="800"
-                >
-                  <h1 className="text-4xl mb-1">
-                    4 <span className="text-violet-500">+</span>
-                  </h1>
-                  <p>Tahun Pengalaman</p>
-                </div>
+                ></div>
               </div>
             </div>
           </div>
@@ -353,7 +335,7 @@ const App = () => {
               Berikut ini beberapa tools yang saya biasa saya gunakan
             </p>
           </div>
-          
+
           <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
             {listTools.map((tool, index) => (
               <div
@@ -361,7 +343,7 @@ const App = () => {
                 key={tool.id}
                 data-aos="fade-up"
                 data-aos-duration="600"
-                data-aos-delay={200 + (index * 100)}
+                data-aos-delay={200 + index * 100}
               >
                 <img
                   src={tool.gambar}
@@ -390,46 +372,46 @@ const App = () => {
               Berikut ini beberapa proyek yang telah saya buat
             </p>
           </div>
-          
+
           <div className="proyek-box mt-14 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
             {listProyek.map((proyek, index) => (
-              <div 
-                key={proyek.id} 
+              <div
+                key={proyek.id}
                 className="bg-zinc-800 rounded-md overflow-hidden flex flex-col"
                 data-aos="fade-up"
                 data-aos-duration="800"
-                data-aos-delay={200 + (index * 150)}
+                data-aos-delay={200 + index * 150}
               >
                 <div className="relative">
-                  <img 
-                    src={proyek.gambar} 
-                    alt="Proyek Image" 
+                  <img
+                    src={proyek.gambar}
+                    alt="Proyek Image"
                     className="w-full h-auto object-contain cursor-default select-none"
-                    loading="lazy" 
-                    style={{ maxHeight: 'none' }}
+                    loading="lazy"
+                    style={{ maxHeight: "none" }}
                     data-aos="zoom-in"
                     data-aos-duration="600"
-                    data-aos-delay={300 + (index * 150)}
+                    data-aos-delay={300 + index * 150}
                     onClick={handleImageClick}
                     onContextMenu={handleImageClick}
                     draggable="false"
                   />
                 </div>
                 <div className="p-4 flex-grow flex flex-col">
-                  <h1 
+                  <h1
                     className="text-2xl font-bold my-4"
                     data-aos="fade-up"
                     data-aos-duration="600"
-                    data-aos-delay={400 + (index * 150)}
+                    data-aos-delay={400 + index * 150}
                   >
                     {proyek.nama}
                   </h1>
-                 
-                  <div 
+
+                  <div
                     className="flex flex-wrap gap-2 mb-6"
                     data-aos="fade-up"
                     data-aos-duration="600"
-                    data-aos-delay={500 + (index * 150)}
+                    data-aos-delay={500 + index * 150}
                   >
                     {proyek.tools.map((tool, toolIndex) => (
                       <p
@@ -437,17 +419,17 @@ const App = () => {
                         key={toolIndex}
                         data-aos="fade-left"
                         data-aos-duration="400"
-                        data-aos-delay={600 + (index * 150) + (toolIndex * 50)}
+                        data-aos-delay={600 + index * 150 + toolIndex * 50}
                       >
                         {tool}
                       </p>
                     ))}
                   </div>
-                  <div 
+                  <div
                     className="text-center mt-auto"
                     data-aos="fade-up"
                     data-aos-duration="600"
-                    data-aos-delay={700 + (index * 150)}
+                    data-aos-delay={700 + index * 150}
                   >
                     <button
                       onClick={() => handleLihatDetail(proyek.id)}
@@ -474,8 +456,8 @@ const App = () => {
               Mari terhubung dengan saya.
             </p>
           </div>
-          
-          <div 
+
+          <div
             className="w-full flex justify-center mt-10"
             data-aos="fade-up"
             data-aos-duration="800"
@@ -491,7 +473,7 @@ const App = () => {
                   className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 transition"
                   data-aos="zoom-in"
                   data-aos-duration="600"
-                  data-aos-delay={300 + (index * 100)}
+                  data-aos-delay={300 + index * 100}
                 >
                   <img
                     src={kontak.gambar}
