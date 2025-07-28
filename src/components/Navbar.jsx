@@ -5,44 +5,107 @@ const Navbar = () => {
   
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 150) {
-        setActive(true);
-      } else {
-        setActive(false);
-      }
+      setActive(window.scrollY > 150);
     };
-    
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  
   return (
-    <div className="navbar py-7 flex items-center justify-between">
-      <div className="logo">
-        <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white">
-          Portofolio
-        </h1>
-      </div>
-      <ul className={`menu flex items-center  sm:gap-10 gap-4 md:static fixed left-1/2 -translate-x-1/2 md:translate-x-0
-       md:opacity-100 bg-white/30 backdrop-blur-md p-4 rounded-br-2xl 
-        rounded-bl-2xl md:bg-transparent transition-all md:transition-none  ${
-          active ? "top-0 opacity-100" : "-top-10 opacity-0"}`}>
-        <li>
-          <a href="" className=" sm:text-lg text-base font-medium">Beranda</a>
-        </li>
-        <li>
-          <a href="" className="sm:text-lg text-base font-medium">Tentang</a>
-        </li>
-        <li>
-          <a href="" className="sm:text-lg text-base font-medium">Proyek</a>
-        </li>
-        <li>
-          <a href="" className="sm:text-lg text-base font-medium">Kontak</a>
-        </li>
-      </ul>
-    </div>
+    <>
+      {/* Navbar untuk Desktop - selalu terlihat */}
+      <nav className="hidden md:block px-4 md:px-6">
+        <div className="navbar py-4 md:py-7 flex items-center justify-between max-w-7xl mx-auto">
+          {/* Logo - hanya untuk desktop */}
+          <div className="logo">
+            <h1 className="text-2xl md:text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white">
+              Portofolio
+            </h1>
+          </div>
+          
+          {/* Menu Desktop */}
+          <ul className="menu flex items-center gap-6 md:gap-10">
+            <li>
+              <a 
+                href="#home" 
+                className="text-base md:text-lg font-medium pb-1 border-b-2 border-transparent hover:border-violet-500 transition duration-300 whitespace-nowrap text-white"
+              >
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#about" 
+                className="text-base md:text-lg font-medium pb-1 border-b-2 border-transparent hover:border-violet-500 transition duration-300 whitespace-nowrap text-white"
+              >
+                Tentang
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#projects" 
+                className="text-base md:text-lg font-medium pb-1 border-b-2 border-transparent hover:border-violet-500 transition duration-300 whitespace-nowrap text-white"
+              >
+                Proyek
+              </a>
+            </li>
+            <li>
+              <a 
+                href="#contact" 
+                className="text-base md:text-lg font-medium pb-1 border-b-2 border-transparent hover:border-violet-500 transition duration-300 whitespace-nowrap text-white"
+              >
+                Kontak
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* Navbar untuk Mobile - hanya muncul saat scroll */}
+      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 px-4">
+        <ul
+          className={`menu flex items-center gap-3 justify-center text-center
+          max-w-[95%] w-full mx-auto
+          bg-white/20 backdrop-blur-lg border border-white/10
+          p-3 rounded-br-2xl rounded-bl-2xl
+          transition-all duration-300 ease-in-out
+          ${active ? "opacity-100 translate-y-0" : "-translate-y-full opacity-0"}`}
+        >
+          <li>
+            <a 
+              href="#home" 
+              className="text-sm font-medium pb-1 border-b-2 border-transparent hover:border-violet-500 transition duration-300 whitespace-nowrap text-white"
+            >
+              Beranda
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#about" 
+              className="text-sm font-medium pb-1 border-b-2 border-transparent hover:border-violet-500 transition duration-300 whitespace-nowrap text-white"
+            >
+              Tentang
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#projects" 
+              className="text-sm font-medium pb-1 border-b-2 border-transparent hover:border-violet-500 transition duration-300 whitespace-nowrap text-white"
+            >
+              Proyek
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#contact" 
+              className="text-sm font-medium pb-1 border-b-2 border-transparent hover:border-violet-500 transition duration-300 whitespace-nowrap text-white"
+            >
+              Kontak
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 };
 
