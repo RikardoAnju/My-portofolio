@@ -140,11 +140,9 @@ export const listkontak = [
 import Proyek1 from "/assets/proyek/proyek1.webp";
 import Proyek2 from "/assets/proyek/proyek2.webp";
 import Proyek3 from "/assets/proyek/proyek3.webp";
-import detail1 from "/assets/proyek/Guide-me1.png";
-import detail2 from "/assets/proyek/Guide-me2.png";
-import detail3 from "/assets/proyek/Guide-me3.png";
-import detail4 from "/assets/proyek/Guide-me4.png";
-import detail5 from "/assets/proyek/Guide-me5.png";
+// Tambahkan import gambar detail untuk proyek 2 dan 3
+
+
 
 export const listProyek = [
   {
@@ -162,8 +160,14 @@ export const listProyek = [
       "Node.js",
       "Midtrans",
     ],
-    gambardetail: [detail1, detail2, detail3, detail4, detail5], // ← pakai array []
-    linkgit: "https://github.com/RikardoAnju/Guide-Me-v2.git", // ← string dalam tanda kutip
+    gambardetail: [
+      "/assets/proyek/Guide-me1.webp",
+      "/assets/proyek/Guide-me2.webp",
+      "/assets/proyek/Guide-me3.webp",
+      "/assets/proyek/Guide-me4.webp",
+      "/assets/proyek/Guide-me5.webp",
+    ],
+    linkgit: "https://github.com/RikardoAnju/Guide-Me-v2.git",
     dad: "200",
   },
 
@@ -174,6 +178,13 @@ export const listProyek = [
     judul: "Aplikasi Mobile Microlearning",
     desk: "Microlearning adalah aplikasi mobile yang dirancang sebagai sistem pembelajaran untuk siswa Ulil Albab agar proses belajar menjadi lebih efektif dan efisien. Melalui aplikasi ini, siswa dapat berinteraksi langsung dengan guru dalam satu halaman materi pembelajaran.",
     tools: ["Flutter", "Dart", "Firebase"],
+    gambardetail: [
+      "/assets/proyek/micro1.webp",
+      "/assets/proyek/micro2.webp", 
+      "/assets/proyek/micro3.webp",
+      "/assets/proyek/micro4.webp",
+      "/assets/proyek/micro5.webp",
+    ], // Tambahkan ini
     linkgit: "https://github.com/RikardoAnju/Microlearning.git",
     dad: "300",
   },
@@ -193,6 +204,14 @@ export const listProyek = [
       "Midtrans",
       "Msql",
     ],
+    gambardetail: [
+      "/assets/proyek/ecom1.webp",
+      "/assets/proyek/ecom2.webp",
+      "/assets/proyek/ecom3.webp", 
+      "/assets/proyek/ecom4.webp",
+      "/assets/proyek/ecom5.webp",
+    ],
+  
     dad: "400",
   },
 ];
